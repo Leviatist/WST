@@ -1,0 +1,125 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #222831;
+}
+
+body {
+    display: flex;
+    justify-content: center;    /* 水平居中 */
+    align-items: center;        /* 垂直居中 */
+}
+
+.box {
+    /* 总体布局及配色 */
+    height: 90%;                         /* 占据视口的高度 */
+    width: 80%;                          /* 占据视口的宽度 */
+    background-color: #393e46;         /* 配色来源 KIT：1 */
+    /* 统一圆角 */
+    border-radius: 10px;                 /* 四个角都是 10px */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* 顶部区域 */
+.top {
+    height: 45px;
+    background-color: #00ADB5;        /* 配色来源 KIT：1 */
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    color: #138c5c;
+    font-weight: bold;
+    border-bottom: 2px solid #04db7b;
+}
+
+/* 底部容器 */
+.bottom {
+    flex: 1;                         /* 自适应填充所有的 剩余空间 */
+    display: flex;
+    overflow: hidden;
+}
+        
+/* 底部左侧 */
+.bottom-left {
+    flex: 1;
+    background-color: #8785A2;       /* 配色来源 KIT：1 */
+    padding: 0 px;
+    color: white;
+    overflow-y: auto;
+    border-right: 2px solid #222831;
+}
+        
+/* 底部右侧 */
+.bottom-right {
+    flex: 4;
+    background-color: #00C7C7;
+    overflow-y: auto;
+    padding: 0px 20px;
+}
+
+.introblock {
+    width: 100%;                  /* 占据父容器所有宽度 */
+    height: 60px;                 /* 固定高度 */
+    /* 基础配色 */
+    background-color: #393e46;
+    color: #ffffff;
+    /* 布局 */
+    display: flex;
+    align-items: center;          /* 文字内容垂直居中 */
+    justify-content: center;      /* 文字内容水平居中 */
+    padding: 0px;
+    /* 过渡动画（颜色转换更平滑） */
+    transition: all 0.3s ease;
+    border-bottom: 2px solid #04db7b;
+}
+
+/* 被选中状态 */
+.introblock.active {
+    background-color: #0095ff;
+    color: #060404;
+}
+
+/* 鼠标悬停效果（可选） */
+.introblock:hover {
+    background-color: #131515; 
+}
+
+/* bottom right 默认不展示 */
+.intro-content{
+	display:none;
+}
+
+.intro-content.active{
+	display:block;
+}
+
+/* 标题样式 */
+h1{
+    text-align:center;
+    font-weight:500;
+    letter-spacing:2px;
+    position:relative;
+}
+
+h1::before,
+h1::after{
+    content:"";
+    position:absolute;
+    top:50%;
+    width:35%;
+    height:1px;
+    background:#312020;
+}
+
+h1::before{
+    left:0;
+}
+
+h1::after{
+    right:0;
+}
