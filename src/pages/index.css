@@ -2,7 +2,6 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #222831;
 }
 
 body {
@@ -13,11 +12,8 @@ body {
 
 .box {
     /* 总体布局及配色 */
-    height: 90%;                         /* 占据视口的高度 */
-    width: 80%;                          /* 占据视口的宽度 */
-    background-color: #393e46;         /* 配色来源 KIT：1 */
-    /* 统一圆角 */
-    border-radius: 10px;                 /* 四个角都是 10px */
+    height: 100%;                         /* 占据视口的高度 */
+    width: 100%;                          /* 占据视口的宽度 */
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -26,20 +22,21 @@ body {
 
 /* 顶部区域 */
 .top {
+    flex: 1;
     height: 45px;
-    background-color: #00ADB5;        /* 配色来源 KIT：1 */
+    background-color: #22495a;        /* 配色来源 KIT：1 */
     flex-shrink: 0;
     display: flex;
     align-items: center;
     padding: 0 20px;
-    color: #138c5c;
+    color: #fedf77;
     font-weight: bold;
-    border-bottom: 2px solid #04db7b;
+    border-bottom: 2px solid #fedf77;
 }
 
 /* 底部容器 */
 .bottom {
-    flex: 1;                         /* 自适应填充所有的 剩余空间 */
+    flex: 20;                         /* 上下比例分配 */
     display: flex;
     overflow: hidden;
 }
@@ -47,17 +44,18 @@ body {
 /* 底部左侧 */
 .bottom-left {
     flex: 1;
-    background-color: #8785A2;       /* 配色来源 KIT：1 */
+    background-color: #22495a;       /* 配色来源 KIT：1 */
     padding: 0 px;
-    color: white;
+    color: #fedf77;
     overflow-y: auto;
-    border-right: 2px solid #222831;
+    border-right: 2px solid #fedf77;
 }
         
 /* 底部右侧 */
 .bottom-right {
-    flex: 4;
-    background-color: #00C7C7;
+    flex: 8;
+    background-color: #22495a;
+    color: #fedf77;
     overflow-y: auto;
     padding: 0px 20px;
 }
@@ -66,8 +64,8 @@ body {
     width: 100%;                  /* 占据父容器所有宽度 */
     height: 60px;                 /* 固定高度 */
     /* 基础配色 */
-    background-color: #393e46;
-    color: #ffffff;
+    background-color: #22495a;
+    color: #fedf77;
     /* 布局 */
     display: flex;
     align-items: center;          /* 文字内容垂直居中 */
@@ -80,13 +78,12 @@ body {
 
 /* 被选中状态 */
 .introblock.active {
-    background-color: #0095ff;
-    color: #060404;
+    background-color: #263b6a;
 }
 
 /* 鼠标悬停效果（可选） */
 .introblock:hover {
-    background-color: #131515; 
+    background-color: #6984a9; 
 }
 
 /* bottom right 默认不展示 */
@@ -99,27 +96,28 @@ body {
 }
 
 /* 标题样式 */
-h1{
+.title{
+    padding: 20px 0;
     text-align:center;
     font-weight:500;
     letter-spacing:2px;
     position:relative;
 }
 
-h1::before,
-h1::after{
+.title::before,
+.title::after{
     content:"";
     position:absolute;
     top:50%;
     width:35%;
-    height:1px;
-    background:#312020;
+    height:2px;
+    background:#fedf77;
 }
 
-h1::before{
+.title::before{
     left:0;
 }
 
-h1::after{
+.title::after{
     right:0;
 }

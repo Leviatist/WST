@@ -1,48 +1,31 @@
 ---
 // index.astro
 import "./index.css"
+import Main from "../content/index/main.md"
+import Layout from "../layouts/Layout.astro"
 ---
-<html lang="zh-CN">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>lev's site</title>
-	</head>
-	<body>
-		<div class="box">
-			<div class="top">
+<Layout>
+	<div class="box">
+		<div class="top">
 				<p> MAIN </p>
-			</div>
-			<div class="bottom">
-				<div class="bottom-left">
-					<div class="introblock active" data-target="main">main</div>
-					<div class="introblock" data-target="blog">blog</div>
-					<div class="introblock" data-target="navi">navi</div>
+		</div>
+		<div class="bottom">
+		<div class="bottom-left">
+		<div class="introblock active" data-target="main">main</div>
+			<div class="introblock" data-target="blog">blog</div>
+			<div class="introblock" data-target="navi">navi</div>
 				</div>
 				<div class="bottom-right">
 					<div class="intro-content active" id="main">
-						<h1> MAIN 页简介 </h1>
-						<p> MAIN 页提供了对其他页的索引。</p>
-						<p> 点击左侧选项卡，可以查看对应页面的简介及内容概览。 </p>
+						<div class="title">MAIN 页的内容简介</div>
+						<Main />
 					</div>
 					<div class="intro-content" id="blog">
-						<h2>Blog</h2>
-						<p>这里是博客介绍</p>
-						<ul>
-							<li>技术</li>
-							<li>随笔</li>
-						</ul>
 					</div>
 					<div class="intro-content" id="navi">
-						<h2>Navigation</h2>
-						<p>这里是导航页</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	<script type="module" src="/src/scripts/intro.js"></script>
-	</body>
-</html>
+</Layout>
