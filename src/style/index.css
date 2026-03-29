@@ -8,6 +8,11 @@ body {
     display: flex;
     justify-content: center;    /* 水平居中 */
     align-items: center;        /* 垂直居中 */
+    border-top: 2px solid #fedf77;
+    border-left: 2px solid #fedf77;
+    border-right: 2px solid #fedf77;
+    border-bottom: 2px solid #fedf77;
+    box-sizing: border-box; /* 边框计入总视口 */
 }
 
 .box {
@@ -32,6 +37,9 @@ body {
     color: #fedf77;
     font-weight: bold;
     border-bottom: 2px solid #fedf77;
+    justify-content: space-between; /* 两端对齐：文字在左，按钮在右 */
+    align-items: center; /* 垂直居中 */
+    padding: 10px 20px;
 }
 
 /* 底部容器 */
@@ -61,6 +69,7 @@ body {
 }
 
 .introblock {
+    flex: 1;
     width: 100%;                  /* 占据父容器所有宽度 */
     height: 60px;                 /* 固定高度 */
     /* 基础配色 */
@@ -70,10 +79,25 @@ body {
     display: flex;
     align-items: center;          /* 文字内容垂直居中 */
     justify-content: center;      /* 文字内容水平居中 */
-    padding: 0px;
+    padding: 0px 0px;
     /* 过渡动画（颜色转换更平滑） */
     transition: all 0.3s ease;
-    border-bottom: 2px solid #04db7b;
+}
+
+/* 底部容器 */
+.item {
+    display: flex;
+    overflow: hidden;
+    border-bottom: 2px solid #fedf77;
+}
+
+.ico {
+    flex: 1;
+    border-right: 2px solid #fedf77;
+    height: 60px;
+    display: flex;
+    align-items: center;          /* 文字内容垂直居中 */
+    justify-content: center;      /* 文字内容水平居中 */
 }
 
 /* 被选中状态 */
