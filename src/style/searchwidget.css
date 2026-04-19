@@ -1,0 +1,147 @@
+
+/* 定义变量，方便后续主题拓展 */
+:root {
+    --sw-primary-color: #0078d4; /* Bing Blue default */
+    --sw-bg-color: rgb(25,40,80);
+    --sw-border-color: rgb(212,175,55);
+    --sw-text-color: rgb(212,175,55);
+    --sw-hover-bg: rgb(25,40,80);
+    --sw-radius: 8px;
+    --sw-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.search-widget {
+    display: flex;
+    align-items: center;
+    background: var(--sw-bg-color);
+    border: 1px solid var(--sw-border-color);
+    border-radius: var(--sw-radius);
+    box-shadow: var(--sw-shadow);
+    max-width: 600px;
+    width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    position: relative;
+    overflow: visible; /* 允许下拉菜单溢出 */
+}
+
+/* --- 引擎选择器部分 --- */
+.engine-selector {
+    position: relative;
+    border-right: 1px solid var(--sw-border-color);
+    height: 44px; /* 与输入框高度一致 */
+}
+
+.engine-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    padding: 0 12px;
+    height: 100%;
+    cursor: pointer;
+    color: var(--sw-text-color);
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.arrow-icon {
+    opacity: 0.6;
+    transition: transform 0.2s;
+}
+
+/* 下拉菜单激活状态 */
+.engine-selector.active .arrow-icon {
+    transform: rotate(180deg);
+}
+
+.engine-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin: 4px 0 0 0;
+    padding: 4px 0;
+    background: var(--sw-bg-color);
+    border: 1px solid var(--sw-border-color);
+    border-radius: var(--sw-radius);
+    box-shadow: var(--sw-shadow);
+    list-style: none;
+    min-width: 120px;
+    z-index: 100;
+    
+    /* 隐藏/显示动画 */
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+}
+
+.engine-selector.active .engine-list {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.engine-list li {
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--sw-text-color);
+}
+
+.engine-list li:hover {
+    background-color: var(--sw-hover-bg);
+    color: var(--sw-primary-color);
+}
+
+/* --- 输入框部分 --- */
+.search-form {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    padding: 12px 16px;
+    font-size: 16px;
+    outline: none;
+    background: transparent;
+    color: var(--sw-text-color);
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+.search-submit-btn {
+    background: transparent;
+    border: none;
+    padding: 0 16px;
+    cursor: pointer;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+}
+
+.search-submit-btn:hover {
+    color: var(--sw-primary-color);
+}
+
+/* 移动端适配 */
+@media (max-width: 480px) {
+    .engine-name {
+        display: none; /* 小屏幕只显示图标 */
+    }
+    .engine-btn {
+        padding: 0 8px;
+    }
+}
