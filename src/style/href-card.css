@@ -1,0 +1,51 @@
+/* 1. 卡片容器：行排列，自动换行 */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;       /* 关键：允许换行 */
+  gap: 20px;             /* 卡片之间的间距 */
+  justify-content: center; /* 可选：居中对齐 */
+  overflow-y: visible;
+}
+
+/* 2. 卡片样式 */
+.card {
+  background: rgb(25, 40, 80);
+  color: rgb(212, 175, 55);
+  border-radius: 12px;
+  border: 2px solid rgb(212,175,55);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 0px 20px 20px;
+  width: 200px;          /* 固定宽度，或者使用 min-width: 250px; flex: 1; */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 卡片标题 */
+.card-title {
+  font-size: 1.1rem;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgb(212, 175, 55);
+}
+
+/* 链接列表容器 */
+.link-list {
+  display: flex;
+  flex-direction: column; /* 链接垂直排列，如果想水平排列可改为 row */
+}
+
+/* 3. 自定义超链接样式 */
+.custom-link {
+  text-decoration: none;
+  background: rgb(25, 40, 80);
+  border-radius: 6px;
+  color: rgb(212, 175, 55);
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent; /* 左侧指示条 */
+}
+
+/* 链接悬停效果 */
+.custom-link:hover {
+  background-color: #eef2ff;
+  color: #2563eb;       /* 蓝色高亮 */
+  border-left: 3px solid #2563eb;
+  padding-left: 15px;   /* 轻微右移效果 */
+}
